@@ -1,0 +1,35 @@
+name: Verificação de Conteúdo
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main, dev]
+
+jobs:
+  lorem-check:
+    name: Sem placeholders (Lorem Ipsum, TODO)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verificar conteúdo placeholder
+        run: node scripts/check-lorem.mjs
+
+  type-check:
+    name: TypeScript estrito
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run type-check

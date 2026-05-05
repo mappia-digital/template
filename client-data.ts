@@ -274,6 +274,7 @@ export const clientData: ClientData = {
 
     logo: {
       src: "/images/logo.svg",
+      // hint: substitua o SVG em /public/images/logo.svg pela marca do cliente
       width: 140,
       height: 32,
       alt: "Mappia Demo",
@@ -285,7 +286,7 @@ export const clientData: ClientData = {
     title: "Mappia Demo — Sites Profissionais que Convertem",
     description:
       "Sites profissionais de alta conversão para PMEs. Entrega em 10 dias com performance 90+ no PageSpeed.",
-    ogImage: "/images/og-image.jpg",
+    ogImage: "/images/og-image.svg",
     locale: "pt-BR",
     twitterHandle: "@mappiadigital",
   },
@@ -294,7 +295,7 @@ export const clientData: ClientData = {
     title: "Sites que **transformam visitantes em clientes**",
     subtitle:
       "Páginas de alta conversão entregues em 10 dias, com performance 90+ no PageSpeed e integração direta com WhatsApp.",
-    backgroundImage: "/images/hero-bg.jpg",
+    backgroundImage: "/images/hero-bg.svg",
     ctaText: "Falar com um especialista",
     ctaMessage: "Olá! Vim pelo site e quero saber mais sobre os serviços.",
     secondaryCtaText: "Ver serviços",
@@ -305,7 +306,7 @@ export const clientData: ClientData = {
   about: {
     shortText:
       "Somos uma agência focada em entregar sites de alta performance para pequenas e médias empresas. Combinamos design moderno, otimização técnica e estratégia de conversão num pacote padronizado e acessível.\n\nEm cada projeto, aplicamos as mesmas regras inegociáveis de qualidade: SEO estruturado, performance acima de 90 no PageSpeed e integração direta com o canal de venda do cliente.",
-    image: "/images/about-team.jpg",
+    image: "/images/about-team.svg",
     history:
       "A Mappia nasceu da necessidade de oferecer sites profissionais com prazo curto e qualidade técnica para PMEs. Em poucos meses já consolidamos uma esteira de entrega que combina IA para geração de copy, design system padronizado e checks automatizados de qualidade.",
     mission:
@@ -316,7 +317,7 @@ export const clientData: ClientData = {
       { title: "Transparência", description: "Prazos claros, escopos fechados, comunicação direta." },
     ],
     team: [
-      { name: "Lucas Benfica", role: "Fundador", photo: "/images/team-1.jpg" },
+      { name: "Lucas Benfica", role: "Fundador", photo: "/images/about-team.svg" },
     ],
   },
 
@@ -365,7 +366,7 @@ export const clientData: ClientData = {
         "Schema.org LocalBusiness configurado",
       ],
       ctaMessage: "Olá! Quero saber mais sobre o pacote Site Institucional.",
-      image: "/images/service-1.jpg",
+      image: "/images/service.svg",
     },
     {
       id: "landing-page",
@@ -373,7 +374,7 @@ export const clientData: ClientData = {
       title: "Landing Page",
       description: "Página única de alta conversão para campanhas pagas.",
       ctaMessage: "Olá! Quero saber mais sobre Landing Page para campanhas.",
-      image: "/images/service-2.jpg",
+      image: "/images/service.svg",
     },
     {
       id: "google-meu-negocio",
@@ -381,7 +382,7 @@ export const clientData: ClientData = {
       title: "Google Meu Negócio",
       description: "Configuração e otimização da ficha local no Google.",
       ctaMessage: "Olá! Quero otimizar meu Google Meu Negócio.",
-      image: "/images/service-3.jpg",
+      image: "/images/service.svg",
     },
     {
       id: "manutencao",
@@ -389,7 +390,7 @@ export const clientData: ClientData = {
       title: "Manutenção Mensal",
       description: "Atualizações, backups e suporte técnico recorrente.",
       ctaMessage: "Olá! Quero saber sobre o plano de Manutenção.",
-      image: "/images/service-4.jpg",
+      image: "/images/service.svg",
     },
     {
       id: "automacao-whatsapp",
@@ -397,7 +398,7 @@ export const clientData: ClientData = {
       title: "Automação WhatsApp",
       description: "Integração via API com chatbots e roteamento de leads.",
       ctaMessage: "Olá! Quero automatizar o atendimento via WhatsApp.",
-      image: "/images/service-5.jpg",
+      image: "/images/service.svg",
     },
     {
       id: "consultoria",
@@ -405,7 +406,7 @@ export const clientData: ClientData = {
       title: "Consultoria Digital",
       description: "Diagnóstico estratégico para presença online.",
       ctaMessage: "Olá! Quero agendar uma consultoria digital.",
-      image: "/images/service-6.jpg",
+      image: "/images/service.svg",
     },
   ],
 

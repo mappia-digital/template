@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="og-bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <radialGradient id="og-glow" cx="0.8" cy="0.2" r="0.7">
+      <stop stop-color="#3B82F6" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#og-bg)"/>
+  <rect width="1200" height="630" fill="url(#og-glow)"/>
+
+  <g transform="translate(96, 200)">
+    <rect width="80" height="80" rx="20" fill="#3B82F6"/>
+    <path d="M20 30 L40 50 L60 30" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M20 50 L40 70 L60 50" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <text x="96" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="white" letter-spacing="-0.03em">Mappia Demo</text>
+  <text x="96" y="440" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="500" fill="#94A3B8">Sites profissionais que convertem</text>
+</svg>
