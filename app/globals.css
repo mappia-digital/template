@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ───────────────────────────────────────────────────────────────────────
+   Design Tokens — CSS Custom Properties
+   Os valores são injetados pelo client-data.ts via `branding-vars` no
+   <html style={...}>. Os defaults abaixo cobrem o template.
+   ─────────────────────────────────────────────────────────────────────── */
+
+@layer base {
+  :root {
+    /* Cores semânticas (preenchidas via inline style do <html>) */
+    --color-primary: #0F172A;
+    --color-primary-fg: #FFFFFF;
+    --color-primary-muted: #E2E8F0;
+
+    --color-secondary: #3B82F6;
+    --color-secondary-fg: #FFFFFF;
+    --color-secondary-muted: #DBEAFE;
+
+    --color-accent: #22C55E;
+    --color-accent-fg: #FFFFFF;
+
+    /* Neutros — base do design system */
+    --color-background: #FFFFFF;
+    --color-foreground: #0F172A;
+    --color-muted: #F8FAFC;
+    --color-muted-foreground: #64748B;
+    --color-border: #E2E8F0;
+  }
+
+  /* Reset base */
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* Foco acessível e elegante */
+  :focus-visible {
+    @apply outline-none ring-2 ring-secondary ring-offset-2 ring-offset-background rounded;
+  }
+
+  /* Seleção de texto com a cor da marca */
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-fg);
+  }
+
+  /* Scrollbar elegante (Webkit) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-muted);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted-foreground);
+  }
+
+  /* Reduce motion respeita preferência do usuário */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────────────
+   Utility Components — composições reutilizáveis
+   ─────────────────────────────────────────────────────────────────────── */
+
+@layer components {
+  /* Container padrão */
+  .container-mappia {
+    @apply container max-w-7xl;
+  }
+
+  /* Section padding consistente */
+  .section {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+
+  /* Texto com gradiente de marca */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Card padrão */
+  .card-base {
+    @apply rounded-3xl border border-border bg-background shadow-soft transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-elevated;
+  }
+
+  /* Glass effect — usado em navbar e overlays */
+  .glass {
+    background-color: color-mix(in srgb, var(--color-background) 80%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────────────
+   Animações de scroll reveal — aplicadas via useScrollReveal hook
+   ─────────────────────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .reveal-init {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger delays para elementos em sequência */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+  .delay-500 { transition-delay: 500ms; }
+}
